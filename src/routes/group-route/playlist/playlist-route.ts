@@ -7,5 +7,5 @@ const playlistMiddleWare = new PlaylistMiddleWare()
 
 router.post('/add', playlistMiddleWare.setPlaylist)
 router.get('/', playlistMiddleWare.getPlaylist)
-
+router.put('/update', playlistMiddleWare.updatePlaylist)
 export default router

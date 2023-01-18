@@ -29,4 +29,7 @@ export class PlaylistService {
             })
             .first()
     }
+    updatePlaylist(obj: any): Knex.QueryBuilder {
+        return knex('playlist').update(obj).where('id_playlist', obj.id_playlist)
+    }
 }
