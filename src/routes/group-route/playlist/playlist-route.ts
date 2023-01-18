@@ -6,5 +6,6 @@ const router = Router()
 const playlistMiddleWare = new PlaylistMiddleWare()
 
 router.post('/add', playlistMiddleWare.setPlaylist)
+router.get('/', playlistMiddleWare.getPlaylist)
 
 export default router

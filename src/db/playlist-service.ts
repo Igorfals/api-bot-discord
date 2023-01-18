@@ -11,4 +11,22 @@ export class PlaylistService {
             .select('playlist.*')
             .andWhere('id_playlist', id).first()
     }
+    getPlaylist(request: any): Knex.QueryBuilder<PlaylistModel> {
+        return knex('playlist')
+            .andWhere(function () {
+                if (request.pesquisa) {
+                    this.where('nome_playlist', 'Like', `%${request.pequisa}%`)
+                }
+            })
+            .limit(request.limit).offset(request.offset)
+    }
+    getPlaylistTotal(request: any): Knex.QueryBuilder {
+        return knex('playlist').count('id_playlist as total')
+            .andWhere(function () {
+                if (request.pesquisa) {
+                    this.where('nome_play', 'Like', `%${request.pesquisa}%`)
+                }
+            })
+            .first()
+    }
 }
