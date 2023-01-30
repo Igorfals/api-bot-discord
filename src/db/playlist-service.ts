@@ -32,4 +32,9 @@ export class PlaylistService {
     updatePlaylist(obj: any): Knex.QueryBuilder {
         return knex('playlist').update(obj).where('id_playlist', obj.id_playlist)
     }
+    deletePlaylist(id: number): any {
+        return knex.transaction(async function (trx) {
+            await trx('playlist').where('id_playlist', id).del()
+        })
+    }
 }
