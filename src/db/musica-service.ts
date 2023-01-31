@@ -33,4 +33,9 @@ export class MusicaService {
     updateMusica(obj: any): Knex.QueryBuilder {
         return knex('musicas').update(obj).where('id_musica', obj.id_musica)
     }
+    deleteMusica(id: number): any {
+        return knex.transaction(async function (trx) {
+            await trx('musicas').where('id_musica', id).del()
+        })
+    }
 }

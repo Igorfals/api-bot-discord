@@ -1,21 +1,21 @@
 import { ControllerResponse } from '../../../models/controller'
-import { PlaylistService } from '../../../db/playlist-service'
+import { MusicaService } from '../../../db/musica-service'
 
-const playlistService = new PlaylistService()
+const musicaService = new MusicaService()
 
-export class DeletePlaylistController {
-    async deletePlaylist(id: number): Promise<ControllerResponse> {
+export class DeleteMusicaController {
+    async deleteMusica(id: number): Promise<ControllerResponse> {
         try {
             if (isNaN(id)) {
                 return {
                     statusCode: 400,
                     resposta: {
-                        mensagem: 'Informações invalida!'
+                        mensagem: 'Informções invalida'
                     }
                 }
             }
-            const item = await playlistService.getPlaylistID(id)
-            await playlistService.deletePlaylist(id)
+            const item = await musicaService.getMusicaID(id)
+            await musicaService.deleteMusica(id)
             return {
                 statusCode: 200,
                 resposta: {
@@ -31,7 +31,6 @@ export class DeletePlaylistController {
                     mensagem: 'Erro no servidor!!'
                 }
             }
-
         }
     }
 }
