@@ -1,6 +1,7 @@
 import { Knex } from 'knex'
 import { MusicaModel } from '../models/musica'
 import { Knexconnection as knex } from './knex-connection'
+import { KeyPairSyncResult } from 'crypto'
 
 export class MusicaService {
     setMusica(obj: any): Knex.QueryBuilder {
@@ -28,5 +29,8 @@ export class MusicaService {
                 }
             })
             .first()
+    }
+    updateMusica(obj: any): Knex.QueryBuilder {
+        return knex('musicas').update(obj).where('id_musica', obj.id_musica)
     }
 }

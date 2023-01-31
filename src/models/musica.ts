@@ -3,6 +3,6 @@ export interface MusicaModel {
     nome_musica: string
     artista: string
     url?: string
-    album: string
+    album?: string
     playlist_id?: number
 }
