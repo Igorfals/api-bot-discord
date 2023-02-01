@@ -11,4 +11,25 @@ export class UserService {
             .select('users.*')
             .andWhere('id_users', id).first()
     }
+    getUser(request: any): Knex.QueryBuilder<UserModel> {
+        return knex('users')
+            .andWhere(function () {
+                if (request.pesquisa) {
+                    this.where('nome', 'like', `%${request.pesquisa}%`)
+                }
+            })
+            .limit(request.limit).offset(request.offset)
+    }
+    getUserTotal(request: any): Knex.QueryBuilder {
+        return knex('users').count('id_users as total')
+            .andWhere(function () {
+                if (request.pesquisa) {
+                    this.where('nome', 'like', `%${request.pequisa}%`)
+                }
+            })
+            .first()
+    }
+    updateUser(obj: any): Knex.QueryBuilder {
+        return knex('users').update(obj).where('id_users', obj.id_users)
+    }
 }
