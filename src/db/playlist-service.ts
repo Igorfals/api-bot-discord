@@ -24,7 +24,7 @@ export class PlaylistService {
         return knex('playlist').count('id_playlist as total')
             .andWhere(function () {
                 if (request.pesquisa) {
-                    this.where('nome_play', 'Like', `%${request.pesquisa}%`)
+                    this.where('nome_playlist', 'Like', `%${request.pesquisa}%`)
                 }
             })
             .first()
