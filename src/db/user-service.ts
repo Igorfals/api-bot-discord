@@ -32,4 +32,9 @@ export class UserService {
     updateUser(obj: any): Knex.QueryBuilder {
         return knex('users').update(obj).where('id_users', obj.id_users)
     }
+    deleteUser(id: number): any {
+        return knex.transaction(async function (trx) {
+            await trx('users').where('id_users', id).del()
+        })
+    }
 }
