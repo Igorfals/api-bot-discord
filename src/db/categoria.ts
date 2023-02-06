@@ -7,11 +7,13 @@ export class CategoriaService {
     setCategoria(obj: any): Knex.QueryBuilder {
         return knex('categoria').insert(obj)
     }
+
     getCategoriaID(id: number): Knex.QueryBuilder<CategoriaModel> {
         return knex('categoria')
             .select('categoria.*')
             .andWhere('id_categoria', id).first()
     }
+
     getCategoria(request: any): Knex.QueryBuilder<CategoriaModel> {
         return knex('categoria')
             .andWhere(function () {
@@ -21,6 +23,7 @@ export class CategoriaService {
             })
             .limit(request.limit).offset(request.offset)
     }
+
     getCategoriaTotal(request: any): Knex.QueryBuilder {
         return knex('categoria').count('id_categoria as total')
             .andWhere(function () {
@@ -29,5 +32,9 @@ export class CategoriaService {
                 }
             })
             .first()
+    }
+
+    updateCategoria(obj: any): Knex.QueryBuilder {
+        return knex('categoria').update(obj).where('id_categoria', obj.id_categoria)
     }
 }
