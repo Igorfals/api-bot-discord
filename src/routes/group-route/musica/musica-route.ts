@@ -1,11 +1,13 @@
 import { Router } from 'express'
 import { MusicaMiddleWare } from '../../../middlewares/musica'
+import { AuthMiddleWare } from '../../../middlewares/auth'
 
 const router = Router()
 const musicaMiddleWare = new MusicaMiddleWare()
+const authMiddleWare = new AuthMiddleWare()
 
-router.post('/add', musicaMiddleWare.setMusica)
-router.get('/', musicaMiddleWare.getMusica)
-router.put('/update', musicaMiddleWare.updateMusica)
-router.delete('/delete/:id', musicaMiddleWare.deleteMusica)
+router.post('/add', authMiddleWare.authorize, musicaMiddleWare.setMusica)
+router.get('/', authMiddleWare.authorize, musicaMiddleWare.getMusica)
+router.put('/update', authMiddleWare.authorize, musicaMiddleWare.updateMusica)
+router.delete('/delete/:id', authMiddleWare.authorize, musicaMiddleWare.deleteMusica)
 export default router
