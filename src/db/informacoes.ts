@@ -36,4 +36,10 @@ export class InformacoesService {
     updateInformacoes(obj: any): Knex.QueryBuilder {
         return knex('informacoes').update(obj).where('id_informacoes', obj.id_informacoes)
     }
+
+    deleteInformacoes(id: number): any {
+        return knex.transaction(async function (trx) {
+            await trx('informacoes').where('id_informacoes', id).del()
+        })
+    }
 }
