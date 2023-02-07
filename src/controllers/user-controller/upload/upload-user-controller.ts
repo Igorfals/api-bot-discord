@@ -1,6 +1,5 @@
 import { ControllerResponse } from '../../../models/controller'
 import { UserService } from '../../../db/user-service'
-import { UserModel } from '../../../models/user'
 import * as dotenv from 'dotenv'
 
 dotenv.config()

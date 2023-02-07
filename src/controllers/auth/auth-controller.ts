@@ -1,5 +1,8 @@
 import { ControllerResponse } from '../../models/controller'
 import jwt from 'jsonwebtoken'
+import * as dotenv from 'dotenv'
+
+dotenv.config()
 
 export class AuthController {
     authorize(token: any): ControllerResponse {
@@ -12,7 +15,7 @@ export class AuthController {
                     }
                 }
             }
-            jwt.verify(token, 'shhhhh')
+            jwt.verify(token, process.env.SALTKEY)
             return {
                 statusCode: 200,
                 resposta: {

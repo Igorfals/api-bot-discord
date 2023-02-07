@@ -2,7 +2,9 @@ import { ControllerResponse } from '../../models/controller'
 import { UserService } from '../../db/user-service'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
+import * as dotenv from 'dotenv'
 
+dotenv.config()
 const userService = new UserService()
 
 
@@ -32,7 +34,7 @@ export class LoginController {
                 email: user.email,
                 username: user.username
             }
-            const token = jwt.sign(userResponse, 'shhhhh');
+            const token = jwt.sign(userResponse, process.env.SALTKEY, { expiresIn: '1h' });
             return {
                 statusCode: 200,
                 resposta: {
