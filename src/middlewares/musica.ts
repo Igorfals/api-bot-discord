@@ -1,8 +1,5 @@
 import { ControllerResponse } from '../models/controller'
-import { AddMusicaController } from '../controllers/musica-controller/add/add-musica.controller'
-import { GetMusicaController } from '../controllers/musica-controller/get/get-musica-controller'
-import { UpdateMusicaController } from '../controllers/musica-controller/update/update-musica-controller'
-import { DeleteMusicaController } from '../controllers/musica-controller/delete/delete-musica-controller'
+import { AddMusicaController, GetMusicaController, UpdateMusicaController, DeleteMusicaController } from '../controllers/musica-controller/'
 import { Response, Request } from 'express'
 
 const addcontroller = new AddMusicaController()

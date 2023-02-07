@@ -1,10 +1,6 @@
 import { ControllerResponse } from '../models/controller'
 import { Request, Response } from 'express'
-import { AddUserController } from '../controllers/user-controller/add/add-user-controller'
-import { GetUserController } from '../controllers/user-controller/get/get-user-controller'
-import { UpdateUserController } from '../controllers/user-controller/update/update-user-controller'
-import { DeleteUserController } from '../controllers/user-controller/delete/delete-user-controller'
-import { UploadUSerController } from '../controllers/user-controller/upload/upload-user-controller'
+import { AddUserController, GetUserController, UpdateUserController, DeleteUserController, UploadUSerController } from '../controllers/user-controller/'
 
 const addcontroller = new AddUserController()
 const getcontroller = new GetUserController()

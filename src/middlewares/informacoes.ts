@@ -1,9 +1,7 @@
 import { ControllerResponse } from '../models/controller'
 import { Request, Response } from 'express'
-import { AddInformacoesController } from '../controllers/informacoes/add/add-informacoes-controller'
-import { GetIndormacoesController } from '../controllers/informacoes/get/get-informacoes-controller'
-import { UpdateInformacoesController } from '../controllers/informacoes/update/update-informacoes-controller'
-import { DeleteInformacoesController } from '../controllers/informacoes/delete/delete-informacoes-controller'
+import { AddInformacoesController, GetIndormacoesController, DeleteInformacoesController, UpdateInformacoesController } from '../controllers/informacoes-controller/'
+
 
 const addController = new AddInformacoesController()
 const getController = new GetIndormacoesController()

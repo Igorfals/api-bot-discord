@@ -1,9 +1,6 @@
 import { ControllerResponse } from '../models/controller'
 import { Request, Response } from 'express'
-import { AddCategoriaController } from '../controllers/categoria-controller/add/add-categoria-controller'
-import { GetCategoriaController } from '../controllers/categoria-controller/get/get-categoria-controller'
-import { UpdateCategoriaController } from '../controllers/categoria-controller/update/update-categoria-controller'
-import { DeleteCategoriaController } from '../controllers/categoria-controller/delete/delete-categoria-controller'
+import { AddCategoriaController, GetCategoriaController, UpdateCategoriaController, DeleteCategoriaController } from '../controllers/categoria-controller/'
 
 const addController = new AddCategoriaController()
 const getController = new GetCategoriaController()

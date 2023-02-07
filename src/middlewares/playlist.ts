@@ -1,8 +1,5 @@
 import { ControllerResponse } from '../models/controller'
-import { AddPlaylistController } from '../controllers/playlist-controller/add/add-playlist-controller'
-import { GetPlaylistController } from '../controllers/playlist-controller/get/get-playlist-controller'
-import { UpdatePlaylistController } from '../controllers/playlist-controller/update/update-playlist-controller'
-import { DeletePlaylistController } from '../controllers/playlist-controller/delete/delete-playlist-controller'
+import { AddPlaylistController, GetPlaylistController, UpdatePlaylistController, DeletePlaylistController } from '../controllers/playlist-controller/'
 import { Response, Request } from 'express'
 
 const addcontroller = new AddPlaylistController()
