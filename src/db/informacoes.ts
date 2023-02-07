@@ -12,4 +12,24 @@ export class InformacoesService {
             .select('informacoes.*')
             .andWhere('id_informacoes', id).first()
     }
+
+    getInformacoes(request: any): Knex.QueryBuilder<InformacoesModel> {
+        return knex('informacoes')
+            .andWhere(function () {
+                if (request.pesquisa) {
+                    this.where('titulo', 'like', `%${request.pequisa}%`)
+                }
+            })
+            .limit(request.limit).offset(request.offset)
+    }
+
+    getInformacoesTotal(request: any): Knex.QueryBuilder<InformacoesModel> {
+        return knex('informacoes').count('id_informacoes as total')
+            .andWhere(function () {
+                if (request.pequisa) {
+                    this.where('titulo', 'like', `%${request.pequisa}%`)
+                }
+            })
+            .first()
+    }
 }
