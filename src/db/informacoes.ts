@@ -32,4 +32,8 @@ export class InformacoesService {
             })
             .first()
     }
+
+    updateInformacoes(obj: any): Knex.QueryBuilder {
+        return knex('informacoes').update(obj).where('id_informacoes', obj.id_informacoes)
+    }
 }
