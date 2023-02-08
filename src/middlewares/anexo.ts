@@ -1,9 +1,6 @@
 import { ControllerResponse } from '../models/controller'
 import { Request, Response } from 'express'
-import { AddAnexoController } from '../controllers/anexo-controller/add/add-anexo-controller'
-import { GetAnexoController } from '../controllers/anexo-controller/get/get-anexo-controller'
-import { UpdateAnexoController } from '../controllers/anexo-controller/update/update-anexo-controller'
-import { DeleteAnexoController } from '../controllers/anexo-controller/delete/delete-anexo-controller'
+import { AddAnexoController, GetAnexoController, UpdateAnexoController, DeleteAnexoController } from '../controllers/anexo-controller/'
 
 const addController = new AddAnexoController()
 const getController = new GetAnexoController()
