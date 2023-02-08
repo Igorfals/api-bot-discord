@@ -32,7 +32,14 @@ export class AnexoService {
             })
             .first()
     }
+
     updateAnexo(obj: any): Knex.QueryBuilder {
         return knex('anexo').update(obj).where('id', obj.id)
+    }
+
+    deleteAnexo(id: number) {
+        return knex.transaction(async function (trx) {
+            await trx('anexo').where('id', id).del()
+        })
     }
 }

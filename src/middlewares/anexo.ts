@@ -3,10 +3,12 @@ import { Request, Response } from 'express'
 import { AddAnexoController } from '../controllers/anexo-controller/add/add-anexo-controller'
 import { GetAnexoController } from '../controllers/anexo-controller/get/get-anexo-controller'
 import { UpdateAnexoController } from '../controllers/anexo-controller/update/update-anexo-controller'
+import { DeleteAnexoController } from '../controllers/anexo-controller/delete/delete-anexo-controller'
 
 const addController = new AddAnexoController()
 const getController = new GetAnexoController()
 const updateController = new UpdateAnexoController()
+const deleteController = new DeleteAnexoController()
 
 export class AnexoMiddleWare {
     async setAnexo(req: Request, res: Response): Promise<void> {
@@ -32,6 +34,11 @@ export class AnexoMiddleWare {
             users_id: req.body.users_id
         }
         const dados: ControllerResponse = await updateController.updateAnexo(request)
+        res.status(dados.statusCode).json(dados.resposta)
+    }
+
+    async deleteAnexo(req: Request, res: Response): Promise<void> {
+        const dados: ControllerResponse = await deleteController.deleteAnexo(parseInt(req.params.id))
         res.status(dados.statusCode).json(dados.resposta)
     }
 }
