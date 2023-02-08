@@ -32,4 +32,7 @@ export class AnexoService {
             })
             .first()
     }
+    updateAnexo(obj: any): Knex.QueryBuilder {
+        return knex('anexo').update(obj).where('id', obj.id)
+    }
 }
