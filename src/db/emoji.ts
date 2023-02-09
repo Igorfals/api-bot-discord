@@ -12,4 +12,24 @@ export class EmojiService {
             .select('emoji.*')
             .andWhere('id_emoji', id).first()
     }
+
+    getEmoji(request: any): Knex.QueryBuilder<EmojiModel> {
+        return knex('emoji')
+            .andWhere(function () {
+                if (request.pesquisa) {
+                    this.where('titulo', 'like', `%${request.pequisa}%`)
+                }
+            })
+            .limit(request.limit).offset(request.offset)
+    }
+
+    getEmojiTotal(request: any): Knex.QueryBuilder<EmojiModel> {
+        return knex('emoji').count('id_emoji as total')
+            .andWhere(function () {
+                if (request.pesquisa) {
+                    this.where('titulo', 'like', `%${request.pesquisa}%`)
+                }
+            })
+            .first()
+    }
 }
