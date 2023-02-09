@@ -36,4 +36,10 @@ export class EmojiService {
     updateEmoji(obj: any): Knex.QueryBuilder {
         return knex('emoji').update(obj).where('id_emoji', obj.id_emoji)
     }
+
+    deleteEmoji(id: number) {
+        return knex.transaction(async function (trx) {
+            await trx('emoji').where('id_emoji', id).del()
+        })
+    }
 }

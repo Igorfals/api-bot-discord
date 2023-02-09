@@ -11,4 +11,5 @@ const authMiddleWare = new AuthMiddleWare()
 router.post('/add-upload', authMiddleWare.authorize, upload.single('emoji'), emojiMiddleWare.setEmoji)
 router.get('/', authMiddleWare.authorize, emojiMiddleWare.getEmoji)
 router.put('/update', authMiddleWare.authorize, upload.single('emoji'), emojiMiddleWare.updateEmoji)
+router.delete('/delete/:id', authMiddleWare.authorize, emojiMiddleWare.deleteEmoji)
 export default router
