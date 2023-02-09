@@ -32,4 +32,8 @@ export class EmojiService {
             })
             .first()
     }
+
+    updateEmoji(obj: any): Knex.QueryBuilder {
+        return knex('emoji').update(obj).where('id_emoji', obj.id_emoji)
+    }
 }
