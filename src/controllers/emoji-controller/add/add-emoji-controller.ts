@@ -1,14 +1,14 @@
 import { ControllerResponse } from '../../../models/controller'
-import { AnexoService } from '../../../db/anexo'
+import { EmojiService } from '../../../db/emoji'
 import * as dotenv from 'dotenv'
 
 dotenv.config()
-const anexoService = new AnexoService()
+const emojiService = new EmojiService()
 
-export class AddAnexoController {
-    async setAnexo(request: any): Promise<ControllerResponse> {
+export class AddEmojiController {
+    async setEmoji(request: any): Promise<ControllerResponse> {
         try {
-            const requredFields = ['titulo', 'filename', 'users_id']
+            const requredFields = ['titulo', 'filename']
             for (const field of requredFields) {
                 if (!request[field]) {
                     return {
@@ -19,26 +19,24 @@ export class AddAnexoController {
                     }
                 }
             }
-            const anexoAddUpload: any = {
+            const emojiAddUpload: any = {
                 titulo: request.titulo,
-                url_arquivo: `${process.env.BASEURL}uploads/${request.filename}`,
-                users_id: request.users_id
+                url_arquivo: `${process.env.BASEURL}uploads/${request.filename}`
             }
-            const anexo = await anexoService.setAnexo(anexoAddUpload)
-            console.log(anexo);
-            const anexoResponse = await anexoService.getAnexoID(anexo[0])
+            const emoji = await emojiService.setEmoji(emojiAddUpload)
+            const emojiResponse = await emojiService.getEmojiID(emoji[0])
             return {
                 statusCode: 200,
                 resposta: {
-                    anexo: anexoResponse
+                    emoji: emojiResponse
                 }
             }
         } catch (error) {
-            console.log(error)
+            console.log(error);
             return {
                 statusCode: 500,
                 resposta: {
-                    mensagem: 'Erro no sevidor!!'
+                    mensagem: 'Erro no servidor!!'
                 }
             }
         }
