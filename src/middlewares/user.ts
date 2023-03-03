@@ -1,12 +1,16 @@
 import { ControllerResponse } from '../models/controller'
 import { Request, Response } from 'express'
 import { AddUserController, GetUserController, UpdateUserController, DeleteUserController, UploadUSerController } from '../controllers/user-controller/'
+import { EnviarEmailController } from '../controllers/user-controller/enviaremail/enviar-email-user-controller'
+import { RecSenhaController } from '../controllers/user-controller/rec-senha/rec-senha-controller'
 
 const addcontroller = new AddUserController()
 const getcontroller = new GetUserController()
 const updatecontroller = new UpdateUserController()
 const deletecontroller = new DeleteUserController()
 const uploadUserController = new UploadUSerController()
+const enviarEmailController = new EnviarEmailController()
+const recSenhaController = new RecSenhaController()
 
 export class UserMiddleWare {
     async setUser(req: Request, res: Response): Promise<void> {
@@ -35,6 +39,16 @@ export class UserMiddleWare {
 
     async deleteUser(req: Request, res: Response): Promise<void> {
         const dados: ControllerResponse = await deletecontroller.deleteUser(parseInt(req.params.id))
+        res.status(dados.statusCode).json(dados.resposta)
+    }
+
+    async enviarEmail(req: Request, res: Response): Promise<void> {
+        const dados: ControllerResponse = await enviarEmailController.enviarEmail(req.body)
+        res.status(dados.statusCode).json(dados.resposta)
+    }
+
+    async recuperarSenha(req: Request, res: Response): Promise<void> {
+        const dados: ControllerResponse = await recSenhaController.recSenha(req.body)
         res.status(dados.statusCode).json(dados.resposta)
     }
 }

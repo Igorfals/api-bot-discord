@@ -4,5 +4,6 @@ export interface MusicaModel {
     artista: string
     url?: string
     album?: string
-    playlist_id?: number
+    playlist_id: number
+    users_id: number
 }

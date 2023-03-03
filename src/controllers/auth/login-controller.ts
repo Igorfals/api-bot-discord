@@ -11,7 +11,7 @@ const userService = new UserService()
 export class LoginController {
     async login(request: any): Promise<ControllerResponse> {
         try {
-            const user = await userService.login(request.email)
+            const user = await userService.getUserEmail(request.email)
             if (typeof user === 'undefined') {
                 return {
                     statusCode: 400,

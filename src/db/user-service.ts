@@ -43,7 +43,7 @@ export class UserService {
         })
     }
 
-    login(email: string): Knex.QueryBuilder<UserModel> {
+    getUserEmail(email: string): Knex.QueryBuilder<UserModel> {
         return knex('users').where('email', email).first()
     }
 }

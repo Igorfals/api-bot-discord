@@ -9,7 +9,7 @@ const anexoMiddleWare = new AnexoMiddleWare()
 const authMiddleWare = new AuthMiddleWare()
 
 router.post('/anexo-upload', authMiddleWare.authorize, upload.single('anexo'), anexoMiddleWare.setAnexo)
-router.get('/add', authMiddleWare.authorize, anexoMiddleWare.getAnexo)
+router.get('/', authMiddleWare.authorize, anexoMiddleWare.getAnexo)
 router.put('/update', authMiddleWare.authorize, upload.single('anexo'), anexoMiddleWare.updateAnexo)
 router.delete('/delete/:id', authMiddleWare.authorize, anexoMiddleWare.deleteAnexo)
 
