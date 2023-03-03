@@ -35,7 +35,8 @@ export class UpdateUserController {
                 nome: request.nome,
                 email: request.email,
                 username: request.username,
-                password: request.password
+                password: request.password,
+                status_user: request.status_user
             }
             await userService.updateUser(userAdd)
             const userResponse = await userService.getUserID(request.id_users)
