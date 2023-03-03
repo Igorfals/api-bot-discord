@@ -1,5 +1,5 @@
 /**
- * @swagger
+ @swagger
  *  components:
  *   schemas:
  *     UsersAdd:
@@ -36,6 +36,14 @@
  *           type: string
  *         status_users:
  *           type: number
+ * 
+ *     RecuperarSenha:
+ *       type: object
+ *       required:
+ *         - email
+ *       properties:
+ *         email:
+ *           type: string
  */
 
 /**
@@ -100,6 +108,26 @@
  *      "401":
  *        description: "Sem autorização."
  * 
+ * /user/recuperar-senha:
+ *   post:
+ *    summary: "Recuperar Senha"
+ *    description: "Rota responsável por recuperar senha."
+ *    tags:
+ *      - "users"
+ *    security:
+ *      - ApiKeyAuth: []
+ *    requestBody:
+ *      content:
+ *        application/json:
+ *          schema:
+ *            $ref: "#/components/schemas/RecuperarSenha"
+ *      required: true
+ *    responses:
+ *      "200":
+ *        description: "Requisição realizada com sucesso."
+ *      "400":
+ *        description: "Parâmetros inválidos."
+ * 
  * /user/delete/{id}:
  *  delete:
  *    summary: "Deletar o usuario"
@@ -122,4 +150,5 @@
  *        description: "Parâmetros inválidos."
  *      "401":
  *        description: "Sem autorização."
+
  */

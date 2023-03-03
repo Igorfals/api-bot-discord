@@ -9,7 +9,7 @@ const userMiddleWere = new UserMiddleWare()
 const authMiddleWare = new AuthMiddleWare()
 
 router.post('/enviar-email', userMiddleWere.enviarEmail)
-router.post('/recuperar-email', userMiddleWere.recuperarSenha)
+router.post('/recuperar-senha', userMiddleWere.recuperarSenha)
 router.post('/add', userMiddleWere.setUser)
 router.get('/', authMiddleWare.authorize, userMiddleWere.getUser)
 router.put('/update-avatar', authMiddleWare.authorize, upload.single('avatar'), userMiddleWere.uploadAvatar)
