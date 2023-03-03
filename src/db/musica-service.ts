@@ -58,6 +58,8 @@ export class MusicaService {
             })
     }
 
+
+
     updateMusica(obj: any): Knex.QueryBuilder {
         return knex('musicas').update(obj).where('id_musica', obj.id_musica)
     }
