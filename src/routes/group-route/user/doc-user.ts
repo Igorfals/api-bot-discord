@@ -36,6 +36,16 @@
  *           type: string
  *         status_users:
  *           type: number
+ *     UpdateAvatar:
+ *       type: object
+ *       required:
+ *         - id_users
+ *       properties:
+ *         id_users:
+ *           type: number
+ *         avatar:
+ *           type: string
+ *           format: base64
  * 
  *     RecuperarSenha:
  *       type: object
@@ -83,6 +93,28 @@
  *        application/json:
  *          schema:
  *            $ref: "#/components/schemas/UsersUpdate"
+ *      required: true
+ *    responses:
+ *      "200":
+ *        description: "Requisição realizada com sucesso."
+ *      "400":
+ *        description: "Parâmetros inválidos."
+ *      "401":
+ *        description: "Sem autorização."
+ * 
+ * /user/update-avatar:
+ *  put:
+ *    summary: "Altera o avatar do usuario"
+ *    description: "Rota responsável por alterar o avatar do usuario."
+ *    tags:
+ *      - "users"
+ *    security:
+ *      - ApiKeyAuth: []
+ *    requestBody:
+ *      content:
+ *        multipart/form-data:
+ *          schema:
+ *            $ref: "#/components/schemas/UpdateAvatar"
  *      required: true
  *    responses:
  *      "200":
