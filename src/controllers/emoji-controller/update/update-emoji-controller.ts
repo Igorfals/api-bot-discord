@@ -22,7 +22,7 @@ export class UpdateEmojiController {
             const updateUpload: any = {
                 id_emoji: request.id_emoji,
                 titulo: request.titulo,
-                url_arquivo: `${process.env.BASERUL}uploads/${request.filename}`
+                url_arquivo: `${process.env.BASEURL}uploads/${request.filename}`
             }
             await emojiService.updateEmoji(updateUpload)
             const emojiResponse = await emojiService.getEmojiID(request.id_emoji)
