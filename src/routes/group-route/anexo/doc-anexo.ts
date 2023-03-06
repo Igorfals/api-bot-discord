@@ -43,7 +43,7 @@
  *    summary: "Cadastro de anexo"
  *    description: "Rota responsável por cadastrar o anexo."
  *    tags:
- *      - "anexo"
+ *      - "Anexo"
  *    security:
  *      - ApiKeyAuth: []
  *    requestBody:
@@ -65,7 +65,7 @@
  *    summary: "Listando o anexo"
  *    description: "Rota responsável por listar o anexo."
  *    tags:
- *      - "anexo"
+ *      - "Anexo"
  *    security:
  *      - ApiKeyAuth: []
  *    parameters:
@@ -100,7 +100,7 @@
  *    summary: "Alterando o anexo"
  *    description: "Rota responsável por alterar o anexo."
  *    tags:
- *      - "anexo"
+ *      - "Anexo"
  *    security:
  *      - ApiKeyAuth: []
  *    requestBody:
@@ -122,7 +122,7 @@
  *    summary: "Deletar o anexo"
  *    description: "Rota responsável por deletar o anexo."
  *    tags:
- *      - "anexo"
+ *      - "Anexo"
  *    security:
  *      - ApiKeyAuth: []
  *    parameters:

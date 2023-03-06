@@ -26,7 +26,7 @@
  *    summary: "Login..."
  *    description: "Rota responsável por efetuar o login no sistema."
  *    tags:
- *      - "auth"
+ *      - "Auth"
  *    requestBody:
  *      content:
  *        application/json:

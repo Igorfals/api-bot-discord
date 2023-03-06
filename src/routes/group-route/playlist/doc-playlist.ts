@@ -28,7 +28,7 @@
  *    summary: "Cadastro de playlist"
  *    description: "Rota responsável por cadastrar as playlist."
  *    tags:
- *      - "playlist"
+ *      - "Playlist"
  *    security:
  *      - ApiKeyAuth: []
  *    requestBody:
@@ -50,7 +50,7 @@
  *    summary: "Listando as playlist"
  *    description: "Rota responsável por listar as playlist."
  *    tags:
- *      - "playlist"
+ *      - "Playlist"
  *    parameters:
  *      - name: pesquisa
  *        in: query
@@ -85,7 +85,7 @@
  *    summary: "Alterando as playlist"
  *    description: "Rota responsável por alterar as playlist."
  *    tags:
- *      - "playlist"
+ *      - "Playlist"
  *    security:
  *      - ApiKeyAuth: []
  *    requestBody:
@@ -107,7 +107,7 @@
  *    summary: "Deletar a playlist"
  *    description: "Rota responsável por deletar a playlist."
  *    tags:
- *      - "playlist"
+ *      - "Playlist"
  *    security:
  *      - ApiKeyAuth: []
  *    parameters:

@@ -53,7 +53,7 @@
  *    summary: "Musicas da playlist"
  *    description: "Rota responsável por dpegar musicas informando id da playlist."
  *    tags:
- *      - "musica"
+ *      - "Musica"
  *    security:
  *      - ApiKeyAuth: []
  *    parameters:
@@ -93,7 +93,7 @@
  *    summary: "Cadastro de musica"
  *    description: "Rota responsável por cadastrar as musica."
  *    tags:
- *      - "musica"
+ *      - "Musica"
  *    security:
  *      - ApiKeyAuth: []
  *    requestBody:
@@ -115,7 +115,7 @@
  *    summary: "Listando as musica"
  *    description: "Rota responsável por listar as musica."
  *    tags:
- *      - "musica"
+ *      - "Musica"
  *    security:
  *      - ApiKeyAuth: []
  *    parameters:
@@ -150,7 +150,7 @@
  *    summary: "Alterando as musica"
  *    description: "Rota responsável por alterar as musica."
  *    tags:
- *      - "musica"
+ *      - "Musica"
  *    security:
  *      - ApiKeyAuth: []
  *    requestBody:
@@ -172,7 +172,7 @@
  *    summary: "Deletar a musica"
  *    description: "Rota responsável por deletar a musica."
  *    tags:
- *      - "musica"
+ *      - "Musica"
  *    security:
  *      - ApiKeyAuth: []
  *    parameters:

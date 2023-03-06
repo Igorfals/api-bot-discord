@@ -29,7 +29,7 @@
  *    summary: "Cadastro de categorias"
  *    description: "Rota responsável por cadastrar as categorias."
  *    tags:
- *      - "categoria"
+ *      - "Categoria"
  *    security:
  *      - ApiKeyAuth: []
  *    requestBody:
@@ -51,11 +51,11 @@
  *    summary: "Listando as categorias"
  *    description: "Rota responsável por listar as categorias."
  *    tags:
- *      - "categoria"
+ *      - "Categoria"
  *    parameters:
  *      - name: pesquisa
  *        in: query
- *        description: "string para pesquisar musica"
+ *        description: "string para pesquisar categoria"
  *        required: false
  *        schema:
  *          type: string
@@ -86,7 +86,7 @@
  *    summary: "Alterando as categorias"
  *    description: "Rota responsável por alterar as categorias."
  *    tags:
- *      - "categoria"
+ *      - "Categoria"
  *    security:
  *      - ApiKeyAuth: []
  *    requestBody:
@@ -108,7 +108,7 @@
  *    summary: "Deletar as categorias"
  *    description: "Rota responsável por deletar as categorias."
  *    tags:
- *      - "categoria"
+ *      - "Categoria"
  *    security:
  *      - ApiKeyAuth: []
  *    parameters:

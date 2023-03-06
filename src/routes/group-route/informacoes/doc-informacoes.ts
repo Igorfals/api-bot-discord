@@ -42,7 +42,7 @@
  *    summary: "Cadastro de informações"
  *    description: "Rota responsável por cadastrar as informações."
  *    tags:
- *      - "informacoes"
+ *      - "Informacoes"
  *    security:
  *      - ApiKeyAuth: []
  *    requestBody:
@@ -64,11 +64,11 @@
  *    summary: "Listando as informações"
  *    description: "Rota responsável por listar as informações."
  *    tags:
- *      - "informacoes"
+ *      - "Informacoes"
  *    parameters:
  *      - name: pesquisa
  *        in: query
- *        description: "string para pesquisar musica"
+ *        description: "string para pesquisar informacões"
  *        required: false
  *        schema:
  *          type: string
@@ -99,7 +99,7 @@
  *    summary: "Alterando as categorias"
  *    description: "Rota responsável por alterar as informacoes."
  *    tags:
- *      - "informacoes"
+ *      - "Informacoes"
  *    security:
  *      - ApiKeyAuth: []
  *    requestBody:
@@ -121,7 +121,7 @@
  *    summary: "Deletar o usuario"
  *    description: "Rota responsável por deletar o usuario."
  *    tags:
- *      - "informacoes"
+ *      - "Informacoes"
  *    security:
  *      - ApiKeyAuth: []
  *    parameters:

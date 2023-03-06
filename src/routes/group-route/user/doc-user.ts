@@ -63,7 +63,7 @@
  *    summary: "Cadastro de usuarios"
  *    description: "Rota responsável por cadastrar usuarios."
  *    tags:
- *      - "users"
+ *      - "Users"
  *    security:
  *      - ApiKeyAuth: []
  *    requestBody:
@@ -85,7 +85,7 @@
  *    summary: "Altera o usuarios"
  *    description: "Rota responsável por alterar o usuarios."
  *    tags:
- *      - "users"
+ *      - "Users"
  *    security:
  *      - ApiKeyAuth: []
  *    requestBody:
@@ -107,7 +107,7 @@
  *    summary: "Altera o avatar do usuario"
  *    description: "Rota responsável por alterar o avatar do usuario."
  *    tags:
- *      - "users"
+ *      - "Users"
  *    security:
  *      - ApiKeyAuth: []
  *    requestBody:
@@ -129,7 +129,7 @@
  *    summary: "Lista os usuarios"
  *    description: "Rota responsável por listar os usuarios."
  *    tags:
- *      - "users"
+ *      - "Users"
  *    parameters:
  *      - name: pesquisa
  *        in: query
@@ -164,7 +164,7 @@
  *    summary: "Recuperar Senha"
  *    description: "Rota responsável por recuperar senha."
  *    tags:
- *      - "users"
+ *      - "Users"
  *    security:
  *      - ApiKeyAuth: []
  *    requestBody:
@@ -184,7 +184,7 @@
  *    summary: "Deletar o usuario"
  *    description: "Rota responsável por deletar o usuario."
  *    tags:
- *      - "users"
+ *      - "Users"
  *    security:
  *      - ApiKeyAuth: []
  *    parameters:
