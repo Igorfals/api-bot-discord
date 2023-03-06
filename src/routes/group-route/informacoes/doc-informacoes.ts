@@ -65,6 +65,25 @@
  *    description: "Rota responsável por listar as informações."
  *    tags:
  *      - "informacoes"
+ *    parameters:
+ *      - name: pesquisa
+ *        in: query
+ *        description: "string para pesquisar musica"
+ *        required: false
+ *        schema:
+ *          type: string
+ *      - name: limit
+ *        in: query
+ *        description: "Limite de itens para paginação"
+ *        required: false
+ *        schema:
+ *          type: number
+ *      - name: offset
+ *        in: query
+ *        description: "Quantidade de itens para ignorar"
+ *        required: false
+ *        schema:
+ *          type: number
  *    security:
  *      - ApiKeyAuth: []
  *    responses:
